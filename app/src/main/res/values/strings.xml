@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Pacientum</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- fragment login-->
+
+    <string name="nEnfermero">Número de enfermero</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="conectar">Conectarse</string>
+    <string name="olvidar">¿Olvidaste tu contraseña?</string>
+
+    <!-- fragment olvidar contraseña-->
+    <string name="TituloOlvidar">Recordar contraseña</string>
+    <string name="NombreEnfermero">Nombre del enfermero</string>
+    <string name="contraOlvidar1">Introduce nueva contraseña</string>
+    <string name="contraOlvidar2">Introduce de nuevo la contraseña</string>
+
+</resources>

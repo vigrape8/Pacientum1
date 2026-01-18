@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context=".OlvidarFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:padding="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/TituloOlvidar"
+            android:gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:background="@color/fondo_secundario"
+            />
+
+        <!-- CardView del formulario-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvFormulario"
+            android:layout_width="850dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/fondo_global"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <!-- Numero de enfermero-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilnNombreEnfermeroOlvidar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nEnfermero"
+                    android:paddingTop="20dp"
+                    android:textColorHint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietNombreEnfermeroOlvidar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/fondo_secundario"
+                        android:textColor="@color/white"
+                        android:inputType="text"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Numero de enfermero-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilnEnfermeroOlvidar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nEnfermero"
+                    android:paddingTop="20dp"
+                    android:textColorHint="@color/white">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietnEnfermeroOlvidar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/fondo_secundario"
+                        android:textColor="@color/white"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Contraseña nueva-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilpasswordOlvidar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contraOlvidar1"
+                    android:paddingTop="20dp"
+                    android:textColorHint="@color/white"
+                    app:endIconMode="password_toggle"
+                    >
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietpasswordOlvidar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/fondo_secundario"
+                        android:textColor="@color/white"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Contraseña repetir-->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilpasswordrepeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contraOlvidar2"
+                    android:paddingTop="20dp"
+                    android:textColorHint="@color/white"
+                    app:endIconMode="password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tietpasswordrepeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/fondo_secundario"
+                        android:textColor="@color/white"
+                        android:inputType="textPassword"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Boton de conectar-->
+                <Button
+                    android:id="@+id/btnConectar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/conectar"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>
