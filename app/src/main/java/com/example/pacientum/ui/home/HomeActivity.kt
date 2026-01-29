@@ -1,19 +1,16 @@
-package com.example.pacientum
+package com.example.pacientum.ui.home
 
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import androidx.activity.enableEdgeToEdge
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.pacientum.R
 import com.example.pacientum.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
@@ -39,7 +36,7 @@ class HomeActivity : AppCompatActivity() {
         return true
     }
     override fun onOptionsItemSelected(@NonNull item: MenuItem): Boolean {
-        return onNavDestinationSelected(item, navController)
+        return NavigationUI.onNavDestinationSelected(item, navController)
                 || super.onOptionsItemSelected(item)
     }
     //boton de devolver

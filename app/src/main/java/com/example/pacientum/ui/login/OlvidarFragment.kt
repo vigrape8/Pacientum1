@@ -1,15 +1,14 @@
-package com.example.pacientum
+package com.example.pacientum.ui.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.pacientum.databinding.FragmentLoginBinding
+import androidx.fragment.app.Fragment
+import com.example.pacientum.databinding.FragmentOlvidarBinding
 
-class LoginFragment : Fragment() {
-
-    private var _binding: FragmentLoginBinding?=null
+class OlvidarFragment : Fragment() {
+    private var _binding: FragmentOlvidarBinding?=null
     private val binding get()=_binding!!
 
     override fun onCreateView(
@@ -17,7 +16,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding= FragmentLoginBinding.inflate(inflater,container,false)
+        _binding= FragmentOlvidarBinding.inflate(inflater,container,false)
         return binding.root
     }
 
