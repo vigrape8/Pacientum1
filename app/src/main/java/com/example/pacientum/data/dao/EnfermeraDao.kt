@@ -20,8 +20,8 @@ interface EnfermeraDao{
 
     @Query("SELECT * FROM enfermera WHERE id = :id")
     suspend fun getEnfermeraPorId(id: Int): EnfermeraEntity?
-    @Query("SELECT * FROM enfermera WHERE email = :email AND password = :password LIMIT 1")
-    suspend fun login(email: String, password: String): EnfermeraEntity?
+    @Query("SELECT * FROM enfermera WHERE id = :numeroId AND password = :pass")
+    suspend fun login(numeroId: Int, pass: String): EnfermeraEntity?
     @Query("SELECT * FROM enfermera WHERE email = :email LIMIT 1")
     suspend fun getEnfermeraPorEmail(email: String): EnfermeraEntity?
 }

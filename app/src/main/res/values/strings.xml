@@ -10,6 +10,7 @@
     <string name="olvidar">¿Olvidaste tu contraseña?</string>
 
     <!-- fragment olvidar contraseña-->
+    <string name="eEnfermero">Correo electronico del enfermero</string>
     <string name="TituloOlvidar">Recordar contraseña</string>
     <string name="NombreEnfermero">Nombre del enfermero</string>
     <string name="contraOlvidar1">Introduce nueva contraseña</string>

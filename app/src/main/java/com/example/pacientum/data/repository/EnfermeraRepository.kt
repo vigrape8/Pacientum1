@@ -5,7 +5,7 @@ import com.example.pacientum.data.entities.EnfermeraEntity
 
 class EnfermeraRepository(private val enfermeraDao: EnfermeraDao) {
     //para el login
-    suspend fun login(email:String,pass:String)=enfermeraDao.login(email,pass)
+    suspend fun login(id:Int,pass:String)=enfermeraDao.login(id,pass)
     //para añadir nuevas enfermeras
     suspend fun insertar(enfermera: EnfermeraEntity)=enfermeraDao.insertEnfermera(enfermera)
     //para recuperar contraseña

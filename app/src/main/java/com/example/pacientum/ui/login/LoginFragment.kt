@@ -53,11 +53,11 @@ class LoginFragment : Fragment() {
         }
         //accion al presionar boton de conectar
         binding.btnConectar.setOnClickListener {
-            val email=binding.tietnEnfermero.text.toString()
+            val id=binding.tietnEnfermero.text.toString().toIntOrNull()
             val pass=binding.tietpassword.text.toString()
             //si los dos campos estan rellenos intenta el login
-            if(email.isNotEmpty()&&pass.isNotEmpty()){
-                viewModel.login(email,pass)
+            if(id!= null&&pass.isNotEmpty()){
+                viewModel.login(id,pass)
             }else{
                 Toast.makeText(requireContext(),"Rellena todos los campos",Toast.LENGTH_SHORT).show()
             }

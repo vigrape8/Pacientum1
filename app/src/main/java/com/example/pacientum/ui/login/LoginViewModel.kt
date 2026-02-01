@@ -18,9 +18,9 @@ class LoginViewModel(private val repository: EnfermeraRepository): ViewModel() {
     private val _actualizarPassResult= MutableLiveData<Boolean>()
     val actualizarPassResult: LiveData<Boolean> = _actualizarPassResult
     //Funcion para loguear
-    fun login(email:String,pass:String){
+    fun login(id:Int,pass:String){
         viewModelScope.launch {
-            val user=repository.login(email,pass)
+            val user=repository.login(id,pass)
             _loginResult.postValue(user)
         }
     }
