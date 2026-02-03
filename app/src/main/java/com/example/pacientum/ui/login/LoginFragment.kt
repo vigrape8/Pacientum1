@@ -45,6 +45,7 @@ class LoginFragment : Fragment() {
             //si concuerda los datos del login pasa al home activity
             if(enfermera!=null){
                 val intent= Intent(requireContext(), HomeActivity::class.java)
+                intent.putExtra("nombreEnfermera",enfermera.nombre)
                 startActivity(intent)
                 activity?.finish()
             }else{
@@ -65,6 +66,10 @@ class LoginFragment : Fragment() {
         //pasar al fragment de recuperar contraseña
         binding.tvOlvidar.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_olvidarFragment)
+        }
+        binding.cvImagen.setOnClickListener {
+            viewModel.crearEnfermeros()
+            Toast.makeText(requireContext(), "Enfermeros añadidos correctamente", Toast.LENGTH_SHORT).show()
         }
     }
 

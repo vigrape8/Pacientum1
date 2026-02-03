@@ -10,4 +10,9 @@
         android:name="com.example.pacientum.ui.home.InicialFragment"
         android:label="fragment_inicial"
         tools:layout="@layout/fragment_inicial" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.pacientum.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>

@@ -38,4 +38,20 @@ class LoginViewModel(private val repository: EnfermeraRepository): ViewModel() {
             }
         }
     }
+    fun crearEnfermeros(){
+        viewModelScope.launch {
+            // Creamos la lista basada en tu boceto
+            val enfermerosIniciales = listOf(
+                EnfermeraEntity(1, "Sheila", "Carbonell", "Calle Falsa,123","Hematología","1234","sheila@gmail.com"),
+                EnfermeraEntity(2, "Carlos", "Cabeza", "Calle Almendros,12","Laboratorio","1234","carlos@gmail.com"),
+                EnfermeraEntity(3, "Sandra", "Pesquero", "Avenida de las Americas,34","Neonatos","1234","sandra@gmail.com"),
+                EnfermeraEntity(4, "Ramona", "Sánchez", "Calle Prados,1","Interna","1234","ramona@gmail.com"),
+                EnfermeraEntity(5, "Victor", "Gracia", "Evergreen Terrace,742","Suprema","1234","victor@gmail.com")
+            )
+
+            enfermerosIniciales.forEach { enfermero ->
+                repository.insertar(enfermero)
+            }
+        }
+    }
 }

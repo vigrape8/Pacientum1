@@ -23,6 +23,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val nombreLogueado = intent.getStringExtra("nombreEnfermera") ?: "Enfermero"
         binding= ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -44,7 +45,7 @@ class HomeActivity : AppCompatActivity() {
         }
         val headerView = binding.navView.getHeaderView(0)
         val tvNombre = headerView.findViewById<TextView>(R.id.tvNombreEnfermeroMenu)
-        tvNombre.text = "Nombre Enfermero"
+        tvNombre.text = nombreLogueado
     }
     //estrella
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
