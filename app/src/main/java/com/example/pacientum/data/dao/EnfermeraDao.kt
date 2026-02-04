@@ -17,7 +17,8 @@ interface EnfermeraDao{
     @Delete
     suspend fun deleteEnfermera(enfermera: EnfermeraEntity)
 
-
+    @Query("SELECT * FROM enfermera WHERE nombre = :nombre LIMIT 1")
+    suspend fun getEnfermeraPorNombre(nombre: String): EnfermeraEntity?
     @Query("SELECT * FROM enfermera WHERE id = :id")
     suspend fun getEnfermeraPorId(id: Int): EnfermeraEntity?
     @Query("SELECT * FROM enfermera WHERE id = :numeroId AND password = :pass")
