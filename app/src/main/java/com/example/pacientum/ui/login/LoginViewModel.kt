@@ -5,11 +5,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.pacientum.data.entities.EnfermeraEntity
+import com.example.pacientum.data.entities.PacienteEntity
 import com.example.pacientum.data.repository.EnfermeraRepository
+import com.example.pacientum.data.repository.PacienteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class LoginViewModel(private val repository: EnfermeraRepository): ViewModel() {
+class LoginViewModel(private val enfermeraRepository: EnfermeraRepository,
+                     private val pacienteRepo: PacienteRepository
+): ViewModel() {
     //comunicacion con el repository, encapsulamiento
     private val _loginResult= MutableLiveData<EnfermeraEntity?>()
     val loginResult: LiveData<EnfermeraEntity?> =_loginResult
@@ -20,18 +24,18 @@ class LoginViewModel(private val repository: EnfermeraRepository): ViewModel() {
     //Funcion para loguear
     fun login(id:Int,pass:String){
         viewModelScope.launch {
-            val user=repository.login(id,pass)
+            val user=enfermeraRepository.login(id,pass)
             _loginResult.postValue(user)
         }
     }
     //Funcion para recuperar contraseña
     fun restablecerPass(email:String, nuevaPass: String){
         viewModelScope.launch(Dispatchers.IO) {
-            val enfermera=repository.obtenerPorEmail(email)
+            val enfermera=enfermeraRepository.obtenerPorEmail(email)
             if(enfermera!=null){
                 //creamos la contraseña nueva
                 val enfermeraActual=enfermera.copy(password=nuevaPass)
-                repository.insertar(enfermeraActual)
+                enfermeraRepository.insertar(enfermeraActual)
                 _actualizarPassResult.postValue(true)
             }else{
                 _actualizarPassResult.postValue(false)
@@ -50,7 +54,56 @@ class LoginViewModel(private val repository: EnfermeraRepository): ViewModel() {
             )
 
             enfermerosIniciales.forEach { enfermero ->
-                repository.insertar(enfermero)
+                enfermeraRepository.insertar(enfermero)
+            }
+        }
+    }
+    fun crearPacientes() {
+        viewModelScope.launch {
+            val pacientesIniciales = listOf(
+                PacienteEntity(
+                    enfermeroID = 1, // Asignado a Sheila
+                    nombre = "Manuel",
+                    apellidos = "Carmena",
+                    edad = 72,
+                    motivoIngreso = "Insuficiencia cardíaca",
+                    antecedentes = "Hipertensión",
+                    alergias = "Polen",
+                    medicacionCasa = "Enalapril",
+                    pruebasPendientes = "ECG",
+                    fechaPrueba = "05/02/2026",
+                    evolutivo = "Estable"
+                ),
+                PacienteEntity(
+                    enfermeroID = 1,
+                    nombre = "María",
+                    apellidos = "García",
+                    edad = 45,
+                    motivoIngreso = "Cirugía programada",
+                    antecedentes = "Ninguno",
+                    alergias = "Penicilina",
+                    medicacionCasa = "Ninguna",
+                    pruebasPendientes = "Analítica",
+                    fechaPrueba = "06/02/2026",
+                    evolutivo = "Buen estado"
+                ),
+                PacienteEntity(
+                    enfermeroID = 2,
+                    nombre = "Ricardo",
+                    apellidos = "Mesa",
+                    edad = 58,
+                    motivoIngreso = "Observación",
+                    antecedentes = "Diabetes tipo II",
+                    alergias = "Ninguna",
+                    medicacionCasa = "Metformina",
+                    pruebasPendientes = "Radiografía",
+                    fechaPrueba = "04/02/2026",
+                    evolutivo = "En espera"
+                )
+            )
+
+            pacientesIniciales.forEach { paciente ->
+                pacienteRepo.insertar(paciente) // Insertamos en la tabla pacientes
             }
         }
     }

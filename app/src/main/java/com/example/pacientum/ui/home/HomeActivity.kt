@@ -16,6 +16,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.pacientum.R
 import com.example.pacientum.data.database.AppDatabase
 import com.example.pacientum.data.repository.EnfermeraRepository
+import com.example.pacientum.data.repository.PacienteRepository
 import com.example.pacientum.databinding.ActivityHomeBinding
 import com.example.pacientum.ui.common.PredeterminadoViewModel
 
@@ -35,9 +36,11 @@ class HomeActivity : AppCompatActivity() {
         setContentView(binding.root)
         //base de datos
         val database= AppDatabase.getDatabase(this)
-        val repository= EnfermeraRepository(database.enfermeraDao())
+        val enfermeraRepo = EnfermeraRepository(database.enfermeraDao())
+        val pacienteRepo = PacienteRepository(database.pacienteDao())
 
-        val predeterminado= PredeterminadoViewModel(repository)
+
+        val predeterminado= PredeterminadoViewModel(enfermeraRepo,pacienteRepo)
         viewModel= ViewModelProvider(this,predeterminado).get(HomeViewModel::class.java)
         viewModel.datosEnfermera(nombreLogueado)
         //para que aparezca el nombre y la planta de la enfermera

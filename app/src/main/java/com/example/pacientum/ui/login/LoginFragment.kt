@@ -12,9 +12,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.pacientum.R
 import com.example.pacientum.data.database.AppDatabase
 import com.example.pacientum.data.repository.EnfermeraRepository
+import com.example.pacientum.data.repository.PacienteRepository
 import com.example.pacientum.databinding.FragmentLoginBinding
 import com.example.pacientum.ui.common.PredeterminadoViewModel
 import com.example.pacientum.ui.home.HomeActivity
+import com.example.pacientum.ui.home.PacienteAdapter
 
 class LoginFragment : Fragment() {
 
@@ -36,7 +38,8 @@ class LoginFragment : Fragment() {
         //base de datos
         val database= AppDatabase.getDatabase(requireContext())
         val repository= EnfermeraRepository(database.enfermeraDao())
-        val determinado= PredeterminadoViewModel(repository)
+        val pacienteRepo= PacienteRepository(database.pacienteDao())
+        val determinado= PredeterminadoViewModel(repository,pacienteRepo)
 
         //iniciamos el viewmodel
         viewModel= ViewModelProvider(this,determinado).get(LoginViewModel::class.java)
@@ -69,7 +72,8 @@ class LoginFragment : Fragment() {
         }
         binding.cvImagen.setOnClickListener {
             viewModel.crearEnfermeros()
-            Toast.makeText(requireContext(), "Enfermeros añadidos correctamente", Toast.LENGTH_SHORT).show()
+            viewModel.crearPacientes()
+            Toast.makeText(requireContext(), "Enfermeros y pacientes añadidos correctamente", Toast.LENGTH_SHORT).show()
         }
     }
 
