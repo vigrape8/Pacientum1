@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.pacientum.data.database.AppDatabase
 import com.example.pacientum.data.repository.EnfermeraRepository
+import com.example.pacientum.data.repository.PacienteRepository
 import com.example.pacientum.databinding.FragmentOlvidarBinding
 import com.example.pacientum.ui.common.PredeterminadoViewModel
 
@@ -31,8 +32,9 @@ class OlvidarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         //base de datos
         val database= AppDatabase.getDatabase(requireContext())
-        val repository= EnfermeraRepository(database.enfermeraDao())
-        val determinado= PredeterminadoViewModel(repository)
+        val enfermeraRepository= EnfermeraRepository(database.enfermeraDao())
+        val pacienteRepo= PacienteRepository(database.pacienteDao())
+        val determinado= PredeterminadoViewModel(enfermeraRepository,pacienteRepo)
 
         //iniciamos el viewmodel
         viewModel= ViewModelProvider(this,determinado).get(LoginViewModel::class.java)
