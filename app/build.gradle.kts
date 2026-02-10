@@ -39,6 +39,10 @@ android {
 }
 
 dependencies {
+    // ML Kit Barcode Scanning (Google Play Services)
+    implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
+    // Material Components (Para el FAB y componentes de diseño)
+    implementation("com.google.android.material:material:1.9.0")
     // Room runtime
     implementation("androidx.room:room-runtime:2.6.1")
     // Room KTX (coroutines + Flow)

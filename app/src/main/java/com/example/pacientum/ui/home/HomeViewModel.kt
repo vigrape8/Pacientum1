@@ -27,4 +27,10 @@ class HomeViewModel (private val repository: EnfermeraRepository,
             }
         }
     }
+
+    fun insertarPaciente(paciente: PacienteEntity){
+        viewModelScope.launch {
+            pacienteRepository.insertar(paciente)
+        }
+    }
 }

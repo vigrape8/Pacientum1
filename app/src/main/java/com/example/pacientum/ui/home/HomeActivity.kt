@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.appcompat.app.AppCompatActivity
@@ -51,8 +52,13 @@ class HomeActivity : AppCompatActivity() {
             enfermera?.let{
                 val headerView = binding.navView.getHeaderView(0)
                 val tvNombre = headerView.findViewById<TextView>(R.id.tvNombreEnfermeroMenu)
+                val ivPerfil=headerView.findViewById<ImageView>(R.id.ivPerfilMenu)
                 tvNombre.text = it.nombre
                 binding.toolbarHome.title="Planta ${it.planta}"
+                ivPerfil.setOnClickListener {
+                    navController.navigate(R.id.perfilFragment)
+                    binding.drawerLayout.closeDrawers()
+                }
             }
         }
         //toolbar
@@ -66,6 +72,7 @@ class HomeActivity : AppCompatActivity() {
 
         binding.navView.setupWithNavController(navController)
         //menu lateral
+
         binding.navView.setNavigationItemSelectedListener { item->
             when(item.itemId){
                 //opcion Inicio
@@ -88,7 +95,6 @@ class HomeActivity : AppCompatActivity() {
         binding.btnPerfil.setOnClickListener {
             navController.navigate(R.id.perfilFragment)
         }
-
 
     }
     private fun cerrarSesion() {
