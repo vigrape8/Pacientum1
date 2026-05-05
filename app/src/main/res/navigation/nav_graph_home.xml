@@ -9,10 +9,19 @@
         android:id="@+id/inicialFragment"
         android:name="com.example.pacientum.ui.home.InicialFragment"
         android:label="fragment_inicial"
-        tools:layout="@layout/fragment_inicial" />
+        tools:layout="@layout/fragment_inicial">
+        <action
+            android:id="@+id/action_inicialFragment_to_infoPacienteFragment"
+            app:destination="@id/infoPacienteFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="com.example.pacientum.ui.home.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/infoPacienteFragment"
+        android:name="com.example.pacientum.ui.home.InfoPacienteFragment"
+        android:label="fragment_info_paciente"
+        tools:layout="@layout/fragment_info_paciente" />
 </navigation>

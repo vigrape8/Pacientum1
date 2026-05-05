@@ -9,7 +9,8 @@ import com.example.pacientum.databinding.ViewholderPacienteBinding
 class PacienteAdapter(
     private var listaPacientes: List<PacienteEntity> = emptyList()
 ) : RecyclerView.Adapter<PacienteViewHolder>() {
-
+    //gestionar el click desde el fragment
+    var onItemClick: ((PacienteEntity) -> Unit)? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PacienteViewHolder {
         val binding = ViewholderPacienteBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -21,6 +22,9 @@ class PacienteAdapter(
 
     override fun onBindViewHolder(holder: PacienteViewHolder, position: Int) {
         holder.bind(listaPacientes[position])
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(listaPacientes[position])
+        }
     }
 
     override fun getItemCount(): Int = listaPacientes.size

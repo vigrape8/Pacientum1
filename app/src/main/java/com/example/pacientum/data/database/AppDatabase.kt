@@ -65,7 +65,7 @@ abstract class AppDatabase : RoomDatabase() {
 
         private var INSTANCE: AppDatabase? = null;
 
-//funcion para crear la instancia de la base de datos
+        //funcion para crear la instancia de la base de datos
 
         fun getDatabase(context: Context): AppDatabase {
 

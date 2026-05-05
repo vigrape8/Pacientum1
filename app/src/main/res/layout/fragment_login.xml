@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:src="@drawable/pacientum" />
+                android:src="@drawable/pacientum"/>
         </androidx.cardview.widget.CardView>
 
         <!-- CardView del formulario-->

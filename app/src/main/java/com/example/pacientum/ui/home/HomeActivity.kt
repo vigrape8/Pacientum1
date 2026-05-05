@@ -17,6 +17,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.pacientum.R
 import com.example.pacientum.data.database.AppDatabase
+import com.example.pacientum.data.repository.ConstantesRepository
 import com.example.pacientum.data.repository.EnfermeraRepository
 import com.example.pacientum.data.repository.PacienteRepository
 import com.example.pacientum.databinding.ActivityHomeBinding
@@ -41,9 +42,9 @@ class HomeActivity : AppCompatActivity() {
         val database= AppDatabase.getDatabase(this)
         val enfermeraRepo = EnfermeraRepository(database.enfermeraDao())
         val pacienteRepo = PacienteRepository(database.pacienteDao())
+        val constantesRepo = ConstantesRepository(database.constantesPacienteDao())
 
-
-        val predeterminado= PredeterminadoViewModel(enfermeraRepo,pacienteRepo)
+        val predeterminado= PredeterminadoViewModel(enfermeraRepo,pacienteRepo,constantesRepo)
         viewModel= ViewModelProvider(this,predeterminado).get(HomeViewModel::class.java)
 
         viewModel.datosEnfermera(nombreLogueado)

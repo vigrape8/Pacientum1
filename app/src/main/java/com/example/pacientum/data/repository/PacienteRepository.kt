@@ -13,4 +13,6 @@ class PacienteRepository(private val pacienteDao: PacienteDao) {
     suspend fun insertar(paciente: PacienteEntity) = pacienteDao.insertPaciente(paciente)
     //obtener paciente por su id
     suspend fun obtenerPorId(id: Int) = pacienteDao.getPacienteById(id)
+    // actualizar paciente
+    suspend fun actualizar(paciente: PacienteEntity) = pacienteDao.updatePaciente(paciente)
 }
