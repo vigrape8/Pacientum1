@@ -64,9 +64,7 @@ class InicialFragment : Fragment() {
         binding.fabMain.setOnClickListener {
             menuFAB()
         }
-        binding.fabNuevoPaciente.setOnClickListener {
-            menuFAB()
-        }
+
         binding.fabCamara.setOnClickListener {
             menuFAB()
             camara()
@@ -77,18 +75,23 @@ class InicialFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
+    override fun onResume() {
+        super.onResume()
+        // Forzamos al adaptador a actualizar la lista para que
+        // recalcule los colores de los círculos
+        if (::pacienteAdapter.isInitialized) {
+            pacienteAdapter.notifyDataSetChanged()
+        }
+    }
     //funcion para desplegar el FAB
     private fun menuFAB() {
         if (!FABAbierto) {
             //Mostrar las opciones
-            binding.fabNuevoPaciente.visibility = View.VISIBLE
             binding.fabCamara.visibility = View.VISIBLE
             //se cambia el logo del principal
             binding.fabMain.setImageResource(android.R.drawable.ic_menu_close_clear_cancel)
             FABAbierto = true
         } else {
-            binding.fabNuevoPaciente.visibility = View.GONE
             binding.fabCamara.visibility = View.GONE
             //se cambia el logo del principal
             binding.fabMain.setImageResource(android.R.drawable.ic_input_add)

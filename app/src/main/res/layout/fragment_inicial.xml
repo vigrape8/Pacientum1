@@ -32,16 +32,6 @@
             app:srcCompat="@android:drawable/ic_menu_camera"
             app:tint="@color/white"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_nuevo_paciente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
-            android:visibility="gone"
-            app:backgroundTint="@color/fondo_home"
-            app:fabSize="mini"
-            app:srcCompat="@android:drawable/ic_menu_edit"
-            app:tint="@color/white"/>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_main"

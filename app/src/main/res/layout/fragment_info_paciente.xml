@@ -13,7 +13,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Datos paciente -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,7 +28,6 @@
                 android:padding="20dp"
                 android:background="@color/white">
 
-                <!-- nombre, edad -->
                 <TextView
                     android:id="@+id/tvNombreEdad"
                     android:layout_width="match_parent"
@@ -46,11 +44,10 @@
                     android:layout_marginBottom="12dp"
                     android:background="#EEEEEE" />
 
-                <!-- Motivo de ingreso -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Motivo de Ingreso:"
+                    android:text="@string/titulo_motivo_ingreso"
                     android:textColor="#666666"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
@@ -62,11 +59,10 @@
                     android:textSize="16sp"
                     tools:text="Dolor abdominal agudo" />
 
-                <!-- Alergias -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alergias:"
+                    android:text="@string/titulo_alergias"
                     android:textColor="#D32F2F"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
@@ -79,11 +75,10 @@
                     android:textSize="16sp"
                     tools:text="Penicilina" />
 
-                <!-- Medicacion casa -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Medicación Habitual (Casa):"
+                    android:text="@string/titulo_medicacion_casa"
                     android:textColor="#666666"
                     android:textStyle="bold"
                     android:textSize="20sp"/>
@@ -96,7 +91,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Datos modificados -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -115,18 +109,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Actualización Clínica"
+                    android:text="@string/titulo_actualizacion_clinica"
                     android:textColor="#333333"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
-                <!-- Pruebas pendientes -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:hint="Pruebas Pendientes">
+                    android:hint="@string/hint_pruebas_pendientes">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etPruebasPendientes"
@@ -134,12 +127,11 @@
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- Fecha de Prueba (Selector) -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:text="Fecha y Hora de Prueba:"
+                    android:text="@string/titulo_fecha_prueba"
                     android:textColor="#666666"
                     android:textStyle="bold" />
 
@@ -150,17 +142,16 @@
                     android:layout_marginBottom="16dp"
                     android:background="#ADACAC"
                     android:drawableEnd="@android:drawable/ic_menu_my_calendar"
-                    android:hint="Toca para seleccionar fecha..."
+                    android:hint="@string/hint_seleccionar_fecha_prueba"
                     android:padding="16dp"
                     android:textSize="16sp" />
 
-                <!-- Evolutivo -->
                 <com.google.android.material.textfield.TextInputLayout
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:hint="Evolutivo del Paciente">
+                    android:hint="@string/hint_evolutivo_paciente">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etEvolutivo"
@@ -173,7 +164,6 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--Constantes vitales y cuidados -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -192,17 +182,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
-                    android:text="Constantes Vitales y Cuidados"
+                    android:text="@string/titulo_constantes_cuidados"
                     android:textColor="#333333"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-                <!-- fecha y hora -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:text="Fecha y Hora de Revisión:"
+                    android:text="@string/titulo_fecha_revision"
                     android:textColor="#666666"
                     android:textStyle="bold" />
 
@@ -214,11 +203,10 @@
                     android:background="#ADACAC"
                     android:drawableEnd="@android:drawable/ic_menu_my_calendar"
                     android:drawablePadding="16dp"
-                    android:hint="Toca para seleccionar fecha y hora..."
+                    android:hint="@string/hint_seleccionar_fecha_constantes"
                     android:padding="16dp"
                     android:textSize="16sp" />
 
-                <!-- temperatura y frecuencia  -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -230,7 +218,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Temperatura: "
+                        android:text="@string/label_temperatura"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -245,14 +233,14 @@
                             android:id="@+id/etTemperatura"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="ºC"
+                            android:hint="@string/hint_grados_centigrados"
                             android:inputType="numberDecimal" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Frecuencia cardíaca: "
+                        android:text="@string/label_frecuencia_cardiaca"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -266,12 +254,11 @@
                             android:id="@+id/etFrecCardiaca"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="lpm"
+                            android:hint="@string/hint_lpm"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
-                <!-- Tension arterial y saturacion -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -283,11 +270,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tensión: "
+                        android:text="@string/label_tension"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
-                    <!-- Tension Sistolica -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
@@ -298,21 +284,20 @@
                             android:id="@+id/etTenSistolica"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Sistólica"
+                            android:hint="@string/hint_sistolica"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=" / "
+                        android:text="@string/separador_tension"
                         android:textSize="20sp"
                         android:textStyle="bold"
                         android:layout_marginStart="4dp"
                         android:layout_marginEnd="4dp"
                         android:textColor="#555555" />
 
-                    <!-- Tension diastolica -->
                     <com.google.android.material.textfield.TextInputLayout
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="0dp"
@@ -324,14 +309,14 @@
                             android:id="@+id/etTenDiastolica"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Diastólica"
+                            android:hint="@string/hint_diastolica"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Saturación: "
+                        android:text="@string/label_saturacion"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -345,7 +330,7 @@
                             android:id="@+id/etSaturacion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="% O2"
+                            android:hint="@string/hint_porcentaje_o2"
                             android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
@@ -356,7 +341,6 @@
                     android:layout_marginBottom="12dp"
                     android:background="#EEEEEE" />
 
-                <!-- diuresis -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -367,7 +351,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="¿Presenta Diuresis?"
+                        android:text="@string/pregunta_diuresis"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -380,16 +364,15 @@
                             android:id="@+id/rbDiuresisSi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sí" />
+                            android:text="@string/opcion_si" />
                         <RadioButton
                             android:id="@+id/rbDiuresisNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="No"
+                            android:text="@string/opcion_no"
                             android:checked="true"/>
                     </RadioGroup>
                 </LinearLayout>
-                <!-- cantidad diuresis, desplegable -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilDiuresisMl"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -397,7 +380,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
                     android:visibility="gone"
-                    android:hint="Cantidad de Diuresis (ml)">
+                    android:hint="@string/hint_cantidad_diuresis">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etDiuresisMl"
@@ -406,7 +389,6 @@
                         android:inputType="number" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- deposiciones -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -418,7 +400,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="¿Realiza Deposiciones?"
+                        android:text="@string/pregunta_deposiciones"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -431,17 +413,16 @@
                             android:id="@+id/rbDeposicionesSi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sí" />
+                            android:text="@string/opcion_si" />
                         <RadioButton
                             android:id="@+id/rbDeposicionesNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="No"
+                            android:text="@string/opcion_no"
                             android:checked="true"/>
                     </RadioGroup>
                 </LinearLayout>
 
-                <!-- Curas -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -452,7 +433,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="¿Requiere Cura?"
+                        android:text="@string/pregunta_cura"
                         android:textStyle="bold"
                         android:textColor="#555555" />
 
@@ -465,16 +446,15 @@
                             android:id="@+id/rbCuraSi"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Sí" />
+                            android:text="@string/opcion_si" />
                         <RadioButton
                             android:id="@+id/rbCuraNo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="No"
+                            android:text="@string/opcion_no"
                             android:checked="true"/>
                     </RadioGroup>
                 </LinearLayout>
-                <!-- si hay cura rellenar, desplegable-->
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilDescripcionCura"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -482,7 +462,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="20dp"
                     android:visibility="gone"
-                    android:hint="Descripción de la cura realizada">
+                    android:hint="@string/hint_descripcion_cura">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/etDescripcionCura"
@@ -491,14 +471,13 @@
                         android:inputType="textMultiLine" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <!-- boton guardar -->
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGuardarCambios"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:padding="12dp"
-                    android:text="Guardar Historia y Constantes" />
+                    android:text="@string/boton_guardar_historia" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
