@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.pacientum.LoginFragment"
+        android:name="com.example.pacientum.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/olvidarFragment"
-        android:name="com.example.pacientum.OlvidarFragment"
+        android:name="com.example.pacientum.ui.login.OlvidarFragment"
         android:label="fragment_olvidar"
         tools:layout="@layout/fragment_olvidar" />
 </navigation>

@@ -4,5 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="fondo_global">#4C64E7</color>
     <color name="fondo_secundario">#7B8AE4</color>
+    <color name="fondo_home">#ED7D9F</color>
 
 </resources>

@@ -5,17 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".OlvidarFragment">
+    tools:context=".ui.login.OlvidarFragment">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="vertical">
-
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvFormulario1"
+            android:layout_width="850dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/white"
+            app:cardCornerRadius="20dp"
+            app:cardUseCompatPadding="true">
         <TextView
-            android:layout_marginTop="30dp"
             android:padding="30dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,6 +31,7 @@
             android:textSize="35dp"
             android:background="@color/fondo_secundario"
             />
+        </androidx.cardview.widget.CardView>
 
         <!-- CardView del formulario-->
         <androidx.cardview.widget.CardView
@@ -37,7 +44,6 @@
             app:cardUseCompatPadding="true">
 
             <LinearLayout
-
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/fondo_global"
@@ -46,37 +52,19 @@
                 android:padding="20dp">
                 <!-- Numero de enfermero-->
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/tilnNombreEnfermeroOlvidar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/nEnfermero"
-                    android:paddingTop="20dp"
-                    android:textColorHint="@color/white">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/tietNombreEnfermeroOlvidar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@color/fondo_secundario"
-                        android:textColor="@color/white"
-                        android:inputType="text"/>
-                </com.google.android.material.textfield.TextInputLayout>
-                <!-- Numero de enfermero-->
-                <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tilnEnfermeroOlvidar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nEnfermero"
+                    android:hint="@string/eEnfermero"
                     android:paddingTop="20dp"
                     android:textColorHint="@color/white">
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/tietnEnfermeroOlvidar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/fondo_secundario"
                         android:textColor="@color/white"
-                        android:inputType="number"/>
+                        android:inputType="textEmailAddress"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <!-- Contraseña nueva-->
                 <com.google.android.material.textfield.TextInputLayout

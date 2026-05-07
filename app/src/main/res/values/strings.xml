@@ -2,17 +2,54 @@
     <string name="app_name">Pacientum</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <!-- fragment login-->
 
+    <!-- fragment login-->
     <string name="nEnfermero">Número de enfermero</string>
     <string name="contraseña">Contraseña</string>
     <string name="conectar">Conectarse</string>
     <string name="olvidar">¿Olvidaste tu contraseña?</string>
 
     <!-- fragment olvidar contraseña-->
+    <string name="eEnfermero">Correo electronico del enfermero</string>
     <string name="TituloOlvidar">Recordar contraseña</string>
     <string name="NombreEnfermero">Nombre del enfermero</string>
     <string name="contraOlvidar1">Introduce nueva contraseña</string>
     <string name="contraOlvidar2">Introduce de nuevo la contraseña</string>
-
+    <!--fragment perfil-->
+    <string name="perfil">Perfil de la enfermera</string>
+    <string name="nombreP">Nombre:</string>
+    <string name="apellidoP">Apellido:</string>
+    <string name="plantaP">Planta:</string>
+    <string name="numeroP">Nº Enfermero:</string>
+    <string name="emailP">email:</string>
+    <!--fragment info paciente-->
+    <string name="titulo_motivo_ingreso">Motivo de Ingreso:</string>
+    <string name="titulo_alergias">Alergias:</string>
+    <string name="titulo_medicacion_casa">Medicación Habitual (Casa):</string>
+    <string name="titulo_actualizacion_clinica">Actualización Clínica</string>
+    <string name="hint_pruebas_pendientes">Pruebas Pendientes</string>
+    <string name="titulo_fecha_prueba">Fecha y Hora de Prueba:</string>
+    <string name="hint_seleccionar_fecha_prueba">Toca para seleccionar fecha...</string>
+    <string name="hint_evolutivo_paciente">Evolutivo del Paciente</string>
+    <string name="titulo_constantes_cuidados">Constantes Vitales y Cuidados</string>
+    <string name="titulo_fecha_revision">Fecha y Hora de Revisión:</string>
+    <string name="hint_seleccionar_fecha_constantes">Toca para seleccionar fecha y hora...</string>
+    <string name="label_temperatura">Temperatura: </string>
+    <string name="hint_grados_centigrados">ºC</string>
+    <string name="label_frecuencia_cardiaca">Frecuencia cardíaca: </string>
+    <string name="hint_lpm">lpm</string>
+    <string name="label_tension">Tensión: </string>
+    <string name="hint_sistolica">Sistólica</string>
+    <string name="separador_tension"> / </string>
+    <string name="hint_diastolica">Diastólica</string>
+    <string name="label_saturacion">Saturación: </string>
+    <string name="hint_porcentaje_o2">% O2</string>
+    <string name="pregunta_diuresis">¿Presenta Diuresis?</string>
+    <string name="opcion_si">Sí</string>
+    <string name="opcion_no">No</string>
+    <string name="hint_cantidad_diuresis">Cantidad de Diuresis (ml)</string>
+    <string name="pregunta_deposiciones">¿Realiza Deposiciones?</string>
+    <string name="pregunta_cura">¿Requiere Cura?</string>
+    <string name="hint_descripcion_cura">Descripción de la cura realizada</string>
+    <string name="boton_guardar_historia">Guardar Historia y Constantes</string>
 </resources>

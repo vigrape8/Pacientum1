@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt")
 }
 
 android {
@@ -8,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.pacientum"
+        applicationId = "com.example.Pacientum.png"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -38,7 +39,16 @@ android {
 }
 
 dependencies {
-
+    // ML Kit Barcode Scanning (Google Play Services)
+    implementation("com.google.android.gms:play-services-code-scanner:16.1.0")
+    // Material Components (Para el FAB y componentes de diseño)
+    implementation("com.google.android.material:material:1.9.0")
+    // Room runtime
+    implementation("androidx.room:room-runtime:2.6.1")
+    // Room KTX (coroutines + Flow)
+    implementation("androidx.room:room-ktx:2.6.1")
+    // Room compiler (KAPT)
+    kapt("androidx.room:room-compiler:2.6.1")
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
